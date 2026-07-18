@@ -54,12 +54,12 @@ void Ball::UpdateSpeed()
     PopConfigSection();
 }
 
-orxBOOL Ball::OnCollide(ScrollObject *_poCollider, orxBODY_PART *_pstPart, orxBODY_PART *_pstColliderPart, const orxVECTOR &_rvPosition, const orxVECTOR &_rvNormal)
+void Ball::OnCollide(ScrollObject *_poCollider, orxBODY_PART *_pstPart, orxBODY_PART *_pstColliderPart, const orxVECTOR &_rvPosition, const orxVECTOR &_rvNormal)
 {
     // We should only be colliding with Scroll objects
     orxASSERT(_poCollider);
 
-    auto modelName = _poCollider->GetModelName();
+    auto modelName = _poCollider->GetName();
     if (orxString_Compare(modelName, "Brick") == 0)
     {
         OnBrickCollide(_rvPosition);
@@ -68,7 +68,7 @@ orxBOOL Ball::OnCollide(ScrollObject *_poCollider, orxBODY_PART *_pstPart, orxBO
     {
         OnBottomWallCollide();
     }
-    return orxTRUE;
+    return;
 }
 
 void Ball::OnBrickCollide(const orxVECTOR &position)

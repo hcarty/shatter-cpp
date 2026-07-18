@@ -1,0 +1,773 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3B9B473165560949295E032E /* Ball.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0F55290C66E97B700AF71BC9 /* Ball.cpp */; };
+		677F71C01FB6760B58E86791 /* Brick.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 798269FF6FC5137312AE06D8 /* Brick.cpp */; };
+		22F32DE660651F9E3FEA4A31 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 098D208C7D4158AE1EB67CCB /* GameScene.cpp */; };
+		569169DE079C3C483CBA7046 /* Object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57234BD203000BB52CD01521 /* Object.cpp */; };
+		75D115A273576B311338577A /* Paddle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38FA65F6113D4FC47D38084E /* Paddle.cpp */; };
+		0872090B626B614378F27D32 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16D57EDA23007F27168915C6 /* Scene.cpp */; };
+		6FB50E0E4C881736633A18B4 /* Score.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0F9E68BD78E72E3B515156E9 /* Score.cpp */; };
+		210F7C2F741F25DA17CE0597 /* shatter-cpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7599188E28ED6BE069BF20F6 /* shatter-cpp.cpp */; };
+		444F57FE0BCF4F266E21449B /* utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27FF07AB24D2574722B557BF /* utils.cpp */; };
+		5E831F3F64E0382119A26B94 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ACF78EC5F0765F610E276B1 /* Foundation.framework */; };
+		193D1032676B2B3D540203F3 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FFD6F08047F4C9223EF5C33 /* AppKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		497E28D02A771F6B6A146580 /* premake4.lua */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.lua; name = "premake4.lua"; path = "../../premake4.lua"; sourceTree = "<group>"; };
+		7A3E057770293FD740B96F70 /* orxBundleData.inc */ = {isa = PBXFileReference; lastKnownFileType = text; name = "orxBundleData.inc"; path = "../../../include/orxBundleData.inc"; sourceTree = "<group>"; };
+		0A2A076122280DE77393753D /* CreationTemplate.ini */ = {isa = PBXFileReference; lastKnownFileType = text; name = "CreationTemplate.ini"; path = "../../../data/config/CreationTemplate.ini"; sourceTree = "<group>"; };
+		064B51E5478D03730DC476EF /* ExtensionTemplate.ini */ = {isa = PBXFileReference; lastKnownFileType = text; name = "ExtensionTemplate.ini"; path = "../../../data/config/ExtensionTemplate.ini"; sourceTree = "<group>"; };
+		4945668D70EF73914AEA7F49 /* SettingsTemplate.ini */ = {isa = PBXFileReference; lastKnownFileType = text; name = "SettingsTemplate.ini"; path = "../../../data/config/SettingsTemplate.ini"; sourceTree = "<group>"; };
+		4FBC6E89787B555633A67F23 /* arena.ini */ = {isa = PBXFileReference; lastKnownFileType = text; name = "arena.ini"; path = "../../../data/config/arena.ini"; sourceTree = "<group>"; };
+		69C332B4709834F42216561B /* ball.ini */ = {isa = PBXFileReference; lastKnownFileType = text; name = "ball.ini"; path = "../../../data/config/ball.ini"; sourceTree = "<group>"; };
+		287E283D6C9947695508278F /* basic.ini */ = {isa = PBXFileReference; lastKnownFileType = text; name = "basic.ini"; path = "../../../data/config/basic.ini"; sourceTree = "<group>"; };
+		3723643C4D6D3A0B3061715B /* brick.ini */ = {isa = PBXFileReference; lastKnownFileType = text; name = "brick.ini"; path = "../../../data/config/brick.ini"; sourceTree = "<group>"; };
+		38C945F22C721EA647DE4291 /* gameover.ini */ = {isa = PBXFileReference; lastKnownFileType = text; name = "gameover.ini"; path = "../../../data/config/gameover.ini"; sourceTree = "<group>"; };
+		4337581967DD7F5756904433 /* paddle.ini */ = {isa = PBXFileReference; lastKnownFileType = text; name = "paddle.ini"; path = "../../../data/config/paddle.ini"; sourceTree = "<group>"; };
+		2F613BB458142E4F663C7BA7 /* scenes.ini */ = {isa = PBXFileReference; lastKnownFileType = text; name = "scenes.ini"; path = "../../../data/config/scenes.ini"; sourceTree = "<group>"; };
+		400660F93AE46299313059FB /* score.ini */ = {isa = PBXFileReference; lastKnownFileType = text; name = "score.ini"; path = "../../../data/config/score.ini"; sourceTree = "<group>"; };
+		031C5DE179EE11A05DFC7915 /* shatter-cpp.ini */ = {isa = PBXFileReference; lastKnownFileType = text; name = "shatter-cpp.ini"; path = "../../../data/config/shatter-cpp.ini"; sourceTree = "<group>"; };
+		093C78181ABB1E604AC70558 /* shatter-cppd.ini */ = {isa = PBXFileReference; lastKnownFileType = text; name = "shatter-cppd.ini"; path = "../../../data/config/shatter-cppd.ini"; sourceTree = "<group>"; };
+		630B7C681F7768BD0747552B /* shatter-cppp.ini */ = {isa = PBXFileReference; lastKnownFileType = text; name = "shatter-cppp.ini"; path = "../../../data/config/shatter-cppp.ini"; sourceTree = "<group>"; };
+		07BD320F022F5E3C4C0A4422 /* smoke.ini */ = {isa = PBXFileReference; lastKnownFileType = text; name = "smoke.ini"; path = "../../../data/config/smoke.ini"; sourceTree = "<group>"; };
+		28F715553409639301587114 /* sparks.ini */ = {isa = PBXFileReference; lastKnownFileType = text; name = "sparks.ini"; path = "../../../data/config/sparks.ini"; sourceTree = "<group>"; };
+		726432AC746F363D13D52C90 /* title.ini */ = {isa = PBXFileReference; lastKnownFileType = text; name = "title.ini"; path = "../../../data/config/title.ini"; sourceTree = "<group>"; };
+		232B6DE579847B3B0B8B072A /* view.ini */ = {isa = PBXFileReference; lastKnownFileType = text; name = "view.ini"; path = "../../../data/config/view.ini"; sourceTree = "<group>"; };
+		44994746453A63BD1AB240EC /* Ball.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Ball.h"; path = "../../../include/Ball.h"; sourceTree = "<group>"; };
+		527845502C9849C13CA77919 /* Brick.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Brick.h"; path = "../../../include/Brick.h"; sourceTree = "<group>"; };
+		0F696983377702D050BA08E1 /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "GameScene.h"; path = "../../../include/GameScene.h"; sourceTree = "<group>"; };
+		6F042AFD4B331D8A6270525F /* Object.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Object.h"; path = "../../../include/Object.h"; sourceTree = "<group>"; };
+		6A84257741EC0D3F62A01DBC /* Paddle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Paddle.h"; path = "../../../include/Paddle.h"; sourceTree = "<group>"; };
+		34EB41FC0A096029569E2CA8 /* Scene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Scene.h"; path = "../../../include/Scene.h"; sourceTree = "<group>"; };
+		09D33A02110B1ACA619E51E5 /* Score.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Score.h"; path = "../../../include/Score.h"; sourceTree = "<group>"; };
+		5B25086A0F2C3CB67B2C0C19 /* Scroll.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Scroll.h"; path = "../../../include/extensions/Scroll/Scroll.h"; sourceTree = "<group>"; };
+		6BD31A7B3B4A1DF9544E0B8B /* ScrollBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ScrollBase.h"; path = "../../../include/extensions/Scroll/ScrollBase.h"; sourceTree = "<group>"; };
+		5BD44B8D312C45F0323335C5 /* ScrollObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ScrollObject.h"; path = "../../../include/extensions/Scroll/ScrollObject.h"; sourceTree = "<group>"; };
+		637E0B706C1D061C29993AA0 /* lz4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "lz4.h"; path = "../../../include/extensions/lz4/lz4.h"; sourceTree = "<group>"; };
+		625D4BC866372A913D9E706E /* lz4hc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "lz4hc.h"; path = "../../../include/extensions/lz4/lz4hc.h"; sourceTree = "<group>"; };
+		5E303A4803685A8241DE7B89 /* orxBundle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "orxBundle.h"; path = "../../../include/extensions/orxBundle.h"; sourceTree = "<group>"; };
+		0990741E6B581FB277F857D3 /* orxExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "orxExtensions.h"; path = "../../../include/extensions/orxExtensions.h"; sourceTree = "<group>"; };
+		75D26D151D5772480C4D4455 /* shatter-cpp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "shatter-cpp.h"; path = "../../../include/shatter-cpp.h"; sourceTree = "<group>"; };
+		642D540F34A1684329591BC5 /* utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "utils.h"; path = "../../../include/utils.h"; sourceTree = "<group>"; };
+		0F55290C66E97B700AF71BC9 /* Ball.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Ball.cpp"; path = "../../../src/Ball.cpp"; sourceTree = "<group>"; };
+		798269FF6FC5137312AE06D8 /* Brick.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Brick.cpp"; path = "../../../src/Brick.cpp"; sourceTree = "<group>"; };
+		098D208C7D4158AE1EB67CCB /* GameScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "GameScene.cpp"; path = "../../../src/GameScene.cpp"; sourceTree = "<group>"; };
+		57234BD203000BB52CD01521 /* Object.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Object.cpp"; path = "../../../src/Object.cpp"; sourceTree = "<group>"; };
+		38FA65F6113D4FC47D38084E /* Paddle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Paddle.cpp"; path = "../../../src/Paddle.cpp"; sourceTree = "<group>"; };
+		16D57EDA23007F27168915C6 /* Scene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Scene.cpp"; path = "../../../src/Scene.cpp"; sourceTree = "<group>"; };
+		0F9E68BD78E72E3B515156E9 /* Score.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Score.cpp"; path = "../../../src/Score.cpp"; sourceTree = "<group>"; };
+		7599188E28ED6BE069BF20F6 /* shatter-cpp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "shatter-cpp.cpp"; path = "../../../src/shatter-cpp.cpp"; sourceTree = "<group>"; };
+		27FF07AB24D2574722B557BF /* utils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "utils.cpp"; path = "../../../src/utils.cpp"; sourceTree = "<group>"; };
+		6ACF78EC5F0765F610E276B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Foundation.framework"; path = "/System/Library/Frameworks/Foundation.framework"; sourceTree = "<absolute>"; };
+		7FFD6F08047F4C9223EF5C33 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AppKit.framework"; path = "/System/Library/Frameworks/AppKit.framework"; sourceTree = "<absolute>"; };
+		5C1527EF6D895279225921A2 /* shatter-cppd */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = "shatter-cppd"; path = "shatter-cppd"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		72CD1EBE0A847E943CE160BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E831F3F64E0382119A26B94 /* Foundation.framework in Frameworks */,
+				193D1032676B2B3D540203F3 /* AppKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		64F873E15183173C715442A9 /* shatter-cpp */ = {
+			isa = PBXGroup;
+			children = (
+				7856004D69617470098502EB /* build */,
+				529F5E890353728B2CD631E0 /* bundle */,
+				44515F9161203B7923534B86 /* config */,
+				64470EB1256F2F5F30115163 /* include */,
+				3D5B43AA56084B0E082D4F86 /* src */,
+				1E7523230E2143C81EB454C5 /* Frameworks */,
+				5E62163F048541B447142696 /* Products */,
+			);
+			name = "shatter-cpp";
+			sourceTree = "<group>";
+		};
+		7856004D69617470098502EB /* build */ = {
+			isa = PBXGroup;
+			children = (
+				497E28D02A771F6B6A146580 /* premake4.lua */,
+			);
+			name = "build";
+			sourceTree = "<group>";
+		};
+		529F5E890353728B2CD631E0 /* bundle */ = {
+			isa = PBXGroup;
+			children = (
+				7A3E057770293FD740B96F70 /* orxBundleData.inc */,
+			);
+			name = "bundle";
+			sourceTree = "<group>";
+		};
+		44515F9161203B7923534B86 /* config */ = {
+			isa = PBXGroup;
+			children = (
+				0A2A076122280DE77393753D /* CreationTemplate.ini */,
+				064B51E5478D03730DC476EF /* ExtensionTemplate.ini */,
+				4945668D70EF73914AEA7F49 /* SettingsTemplate.ini */,
+				4FBC6E89787B555633A67F23 /* arena.ini */,
+				69C332B4709834F42216561B /* ball.ini */,
+				287E283D6C9947695508278F /* basic.ini */,
+				3723643C4D6D3A0B3061715B /* brick.ini */,
+				38C945F22C721EA647DE4291 /* gameover.ini */,
+				4337581967DD7F5756904433 /* paddle.ini */,
+				2F613BB458142E4F663C7BA7 /* scenes.ini */,
+				400660F93AE46299313059FB /* score.ini */,
+				031C5DE179EE11A05DFC7915 /* shatter-cpp.ini */,
+				093C78181ABB1E604AC70558 /* shatter-cppd.ini */,
+				630B7C681F7768BD0747552B /* shatter-cppp.ini */,
+				07BD320F022F5E3C4C0A4422 /* smoke.ini */,
+				28F715553409639301587114 /* sparks.ini */,
+				726432AC746F363D13D52C90 /* title.ini */,
+				232B6DE579847B3B0B8B072A /* view.ini */,
+			);
+			name = "config";
+			sourceTree = "<group>";
+		};
+		64470EB1256F2F5F30115163 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				44994746453A63BD1AB240EC /* Ball.h */,
+				527845502C9849C13CA77919 /* Brick.h */,
+				0F696983377702D050BA08E1 /* GameScene.h */,
+				6F042AFD4B331D8A6270525F /* Object.h */,
+				6A84257741EC0D3F62A01DBC /* Paddle.h */,
+				34EB41FC0A096029569E2CA8 /* Scene.h */,
+				09D33A02110B1ACA619E51E5 /* Score.h */,
+				1FF33C206473795B687C4821 /* extensions */,
+				75D26D151D5772480C4D4455 /* shatter-cpp.h */,
+				642D540F34A1684329591BC5 /* utils.h */,
+			);
+			name = "include";
+			sourceTree = "<group>";
+		};
+		1FF33C206473795B687C4821 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				20B9079D56BD426D15AC6D49 /* Scroll */,
+				443243796FD254966E71634B /* lz4 */,
+				5E303A4803685A8241DE7B89 /* orxBundle.h */,
+				0990741E6B581FB277F857D3 /* orxExtensions.h */,
+			);
+			name = "extensions";
+			sourceTree = "<group>";
+		};
+		20B9079D56BD426D15AC6D49 /* Scroll */ = {
+			isa = PBXGroup;
+			children = (
+				5B25086A0F2C3CB67B2C0C19 /* Scroll.h */,
+				6BD31A7B3B4A1DF9544E0B8B /* ScrollBase.h */,
+				5BD44B8D312C45F0323335C5 /* ScrollObject.h */,
+			);
+			name = "Scroll";
+			sourceTree = "<group>";
+		};
+		443243796FD254966E71634B /* lz4 */ = {
+			isa = PBXGroup;
+			children = (
+				637E0B706C1D061C29993AA0 /* lz4.h */,
+				625D4BC866372A913D9E706E /* lz4hc.h */,
+			);
+			name = "lz4";
+			sourceTree = "<group>";
+		};
+		3D5B43AA56084B0E082D4F86 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				0F55290C66E97B700AF71BC9 /* Ball.cpp */,
+				798269FF6FC5137312AE06D8 /* Brick.cpp */,
+				098D208C7D4158AE1EB67CCB /* GameScene.cpp */,
+				57234BD203000BB52CD01521 /* Object.cpp */,
+				38FA65F6113D4FC47D38084E /* Paddle.cpp */,
+				16D57EDA23007F27168915C6 /* Scene.cpp */,
+				0F9E68BD78E72E3B515156E9 /* Score.cpp */,
+				7599188E28ED6BE069BF20F6 /* shatter-cpp.cpp */,
+				27FF07AB24D2574722B557BF /* utils.cpp */,
+			);
+			name = "src";
+			sourceTree = "<group>";
+		};
+		1E7523230E2143C81EB454C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6ACF78EC5F0765F610E276B1 /* Foundation.framework */,
+				7FFD6F08047F4C9223EF5C33 /* AppKit.framework */,
+			);
+			name = "Frameworks";
+			sourceTree = "<group>";
+		};
+		5E62163F048541B447142696 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5C1527EF6D895279225921A2 /* shatter-cppd */,
+			);
+			name = "Products";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		523D27E2050C6E166DCD4CBF /* shatter-cpp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E6F44D518B317F4378E4CEE /* Build configuration list for PBXNativeTarget "shatter-cpp" */;
+			buildPhases = (
+				4D5D2BEA4E0955975DD42895 /* Resources */,
+				010247F9479D15192E6E6D5C /* Sources */,
+				72CD1EBE0A847E943CE160BE /* Frameworks */,
+				9607AE3710C85E8F00CD1376 /* Postbuild */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "shatter-cpp";
+			productInstallPath = "$(HOME)/bin";
+			productName = "shatter-cpp";
+			productReference = 5C1527EF6D895279225921A2 /* shatter-cppd */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "shatter-cpp" */;
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 1;
+			mainGroup = 64F873E15183173C715442A9 /* shatter-cpp */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				523D27E2050C6E166DCD4CBF /* shatter-cppd */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4D5D2BEA4E0955975DD42895 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9607AE3710C85E8F00CD1376 /* Postbuild */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Postbuild;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp -f /Users/hcarty/projects/orx/code/lib/dynamic/liborx*.dylib ../../../bin";
+		};
+/* End PBXShellScriptBuildPhase section */
+/* Begin PBXSourcesBuildPhase section */
+		010247F9479D15192E6E6D5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B9B473165560949295E032E /* Ball.cpp in Sources */,
+				677F71C01FB6760B58E86791 /* Brick.cpp in Sources */,
+				22F32DE660651F9E3FEA4A31 /* GameScene.cpp in Sources */,
+				569169DE079C3C483CBA7046 /* Object.cpp in Sources */,
+				75D115A273576B311338577A /* Paddle.cpp in Sources */,
+				0872090B626B614378F27D32 /* Scene.cpp in Sources */,
+				6FB50E0E4C881736633A18B4 /* Score.cpp in Sources */,
+				210F7C2F741F25DA17CE0597 /* shatter-cpp.cpp in Sources */,
+				444F57FE0BCF4F266E21449B /* utils.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		23BC47AC7422086C0B342653 /* Debug 64-bit Universal */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CONFIGURATION_BUILD_DIR = ../../../bin;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = "shatter-cppd";
+			};
+			name = "Debug 64-bit Universal";
+		};
+		03522D183F1E067D046E7A1B /* Debug Native 64-bit */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CONFIGURATION_BUILD_DIR = ../../../bin;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = "shatter-cppd";
+			};
+			name = "Debug Native 64-bit";
+		};
+		1C026561483F2E5C4E885035 /* Profile 64-bit Universal */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CONFIGURATION_BUILD_DIR = ../../../bin;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = "shatter-cppp";
+			};
+			name = "Profile 64-bit Universal";
+		};
+		064540EE62913B4751F752A9 /* Profile Native 64-bit */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CONFIGURATION_BUILD_DIR = ../../../bin;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = "shatter-cppp";
+			};
+			name = "Profile Native 64-bit";
+		};
+		0D407FBE1F9029CB5C893673 /* Release 64-bit Universal */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CONFIGURATION_BUILD_DIR = ../../../bin;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = "shatter-cpp";
+			};
+			name = "Release 64-bit Universal";
+		};
+		436C784038C8077F568C0905 /* Release Native 64-bit */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CONFIGURATION_BUILD_DIR = ../../../bin;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = "shatter-cpp";
+			};
+			name = "Release Native 64-bit";
+		};
+		5CD414F841824A3248825CA7 /* Bundle 64-bit Universal */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CONFIGURATION_BUILD_DIR = ../../../bin;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = "shatter-cpp";
+			};
+			name = "Bundle 64-bit Universal";
+		};
+		0450553F33C81D2E658D2942 /* Bundle Native 64-bit */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CONFIGURATION_BUILD_DIR = ../../../bin;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = "shatter-cpp";
+			};
+			name = "Bundle Native 64-bit";
+		};
+		1B3D035424B661A00D5613AA /* Debug 64-bit Universal */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
+				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_CPP_EXCEPTIONS = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"__orxDEBUG__",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"../../../../orx/code/include",
+					"../../../include/extensions",
+					"../../../include",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"../../../../orx/code/lib/dynamic",
+				);
+				OBJROOT = "obj/Universal64/Debug";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = (
+					"-ffast-math",
+					"-gdwarf-2",
+					"-Wno-unused-function",
+					"-Wno-write-strings",
+				);
+				OTHER_LDFLAGS = (
+					"-lorxd",
+					"-dead_strip",
+				);
+				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = static;
+				SYMROOT = "../../../bin";
+			};
+			name = "Debug 64-bit Universal";
+		};
+		43ED10BB1AC652DA79703B88 /* Debug Native 64-bit */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "x86_64";
+				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
+				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_CPP_EXCEPTIONS = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"__orxDEBUG__",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"../../../../orx/code/include",
+					"../../../include/extensions",
+					"../../../include",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"../../../../orx/code/lib/dynamic",
+				);
+				OBJROOT = "obj/x64/Debug";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = (
+					"-ffast-math",
+					"-gdwarf-2",
+					"-Wno-unused-function",
+					"-Wno-write-strings",
+				);
+				OTHER_LDFLAGS = (
+					"-lorxd",
+					"-dead_strip",
+				);
+				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = static;
+				SYMROOT = "../../../bin";
+			};
+			name = "Debug Native 64-bit";
+		};
+		4B8868C9084C59B243F46AC2 /* Profile 64-bit Universal */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
+				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_CPP_EXCEPTIONS = NO;
+				GCC_ENABLE_CPP_RTTI = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"__orxPROFILER__",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"../../../../orx/code/include",
+					"../../../include/extensions",
+					"../../../include",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"../../../../orx/code/lib/dynamic",
+				);
+				OBJROOT = "obj/Universal64/Profile";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = (
+					"-ffast-math",
+					"-gdwarf-2",
+					"-Wno-unused-function",
+					"-Wno-write-strings",
+				);
+				OTHER_LDFLAGS = (
+					"-lorxp",
+					"-dead_strip",
+				);
+				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = static;
+				SYMROOT = "../../../bin";
+			};
+			name = "Profile 64-bit Universal";
+		};
+		6C1374A51A64386712A07E53 /* Profile Native 64-bit */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "x86_64";
+				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
+				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_CPP_EXCEPTIONS = NO;
+				GCC_ENABLE_CPP_RTTI = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"__orxPROFILER__",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"../../../../orx/code/include",
+					"../../../include/extensions",
+					"../../../include",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"../../../../orx/code/lib/dynamic",
+				);
+				OBJROOT = "obj/x64/Profile";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = (
+					"-ffast-math",
+					"-gdwarf-2",
+					"-Wno-unused-function",
+					"-Wno-write-strings",
+				);
+				OTHER_LDFLAGS = (
+					"-lorxp",
+					"-dead_strip",
+				);
+				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = static;
+				SYMROOT = "../../../bin";
+			};
+			name = "Profile Native 64-bit";
+		};
+		4A607D9F6FBF12E12F0B1E68 /* Release 64-bit Universal */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
+				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_CPP_EXCEPTIONS = NO;
+				GCC_ENABLE_CPP_RTTI = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"../../../../orx/code/include",
+					"../../../include/extensions",
+					"../../../include",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"../../../../orx/code/lib/dynamic",
+				);
+				OBJROOT = "obj/Universal64/Release";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = (
+					"-ffast-math",
+					"-gdwarf-2",
+					"-Wno-unused-function",
+					"-Wno-write-strings",
+				);
+				OTHER_LDFLAGS = (
+					"-lorx",
+					"-dead_strip",
+				);
+				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = static;
+				SYMROOT = "../../../bin";
+			};
+			name = "Release 64-bit Universal";
+		};
+		58163452221608B535F658EF /* Release Native 64-bit */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "x86_64";
+				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
+				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_CPP_EXCEPTIONS = NO;
+				GCC_ENABLE_CPP_RTTI = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"../../../../orx/code/include",
+					"../../../include/extensions",
+					"../../../include",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"../../../../orx/code/lib/dynamic",
+				);
+				OBJROOT = "obj/x64/Release";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = (
+					"-ffast-math",
+					"-gdwarf-2",
+					"-Wno-unused-function",
+					"-Wno-write-strings",
+				);
+				OTHER_LDFLAGS = (
+					"-lorx",
+					"-dead_strip",
+				);
+				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = static;
+				SYMROOT = "../../../bin";
+			};
+			name = "Release Native 64-bit";
+		};
+		705A43714F26635A5B96793A /* Bundle 64-bit Universal */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
+				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_CPP_EXCEPTIONS = NO;
+				GCC_ENABLE_CPP_RTTI = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"../../../../orx/code/include",
+					"../../../include/extensions",
+					"../../../include",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"../../../../orx/code/lib/dynamic",
+				);
+				OBJROOT = "obj/Universal64/Bundle";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = (
+					"-ffast-math",
+					"-gdwarf-2",
+					"-Wno-unused-function",
+					"-Wno-write-strings",
+				);
+				OTHER_LDFLAGS = (
+					"-lorx",
+					"-dead_strip",
+				);
+				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = static;
+				SYMROOT = "../../../bin";
+			};
+			name = "Bundle 64-bit Universal";
+		};
+		31A765A47A1F226208EA5A3F /* Bundle Native 64-bit */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "x86_64";
+				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
+				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_CPP_EXCEPTIONS = NO;
+				GCC_ENABLE_CPP_RTTI = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"../../../../orx/code/include",
+					"../../../include/extensions",
+					"../../../include",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"../../../../orx/code/lib/dynamic",
+				);
+				OBJROOT = "obj/x64/Bundle";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = (
+					"-ffast-math",
+					"-gdwarf-2",
+					"-Wno-unused-function",
+					"-Wno-write-strings",
+				);
+				OTHER_LDFLAGS = (
+					"-lorx",
+					"-dead_strip",
+				);
+				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = static;
+				SYMROOT = "../../../bin";
+			};
+			name = "Bundle Native 64-bit";
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7E6F44D518B317F4378E4CEE /* Build configuration list for PBXNativeTarget "shatter-cppd" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23BC47AC7422086C0B342653 /* Debug 64-bit Universal */,
+				03522D183F1E067D046E7A1B /* Debug Native 64-bit */,
+				1C026561483F2E5C4E885035 /* Profile 64-bit Universal */,
+				064540EE62913B4751F752A9 /* Profile Native 64-bit */,
+				0D407FBE1F9029CB5C893673 /* Release 64-bit Universal */,
+				436C784038C8077F568C0905 /* Release Native 64-bit */,
+				5CD414F841824A3248825CA7 /* Bundle 64-bit Universal */,
+				0450553F33C81D2E658D2942 /* Bundle Native 64-bit */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Debug 64-bit Universal";
+		};
+		1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "shatter-cpp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B3D035424B661A00D5613AA /* Debug 64-bit Universal */,
+				43ED10BB1AC652DA79703B88 /* Debug Native 64-bit */,
+				4B8868C9084C59B243F46AC2 /* Profile 64-bit Universal */,
+				6C1374A51A64386712A07E53 /* Profile Native 64-bit */,
+				4A607D9F6FBF12E12F0B1E68 /* Release 64-bit Universal */,
+				58163452221608B535F658EF /* Release Native 64-bit */,
+				705A43714F26635A5B96793A /* Bundle 64-bit Universal */,
+				31A765A47A1F226208EA5A3F /* Bundle Native 64-bit */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Debug 64-bit Universal";
+		};
+/* End XCConfigurationList section */
+
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}

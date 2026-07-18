@@ -6,6 +6,134 @@
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
+			<Target title="Debug|Universal64">
+				<Option output="../../../bin/shatter-cppd" prefix_auto="0" extension_auto="0" />
+				<Option object_output="obj/Universal64/Debug" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-ffast-math" />
+					<Add option="-g" />
+					<Add option="-arch x86_64 -arch arm64" />
+					<Add option="-fno-exceptions" />
+					<Add option="-D__orxDEBUG__" />
+					<Add option="-gdwarf-2" />
+					<Add option="-Wno-unused-function" />
+					<Add option="-Wno-write-strings" />
+					<Add directory="$(ORX)/include" />
+					<Add directory="../../../include/extensions" />
+					<Add directory="../../../include" />
+				</Compiler>
+				<Linker>
+					<Add option="-arch x86_64 -arch arm64" />
+					<Add option="-dead_strip" />
+					<Add option="-framework Foundation" />
+					<Add option="-framework AppKit" />
+					<Add directory="$(ORX)/lib/dynamic" />
+					<Add directory="." />
+					<Add library="orxd" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="cp -f $(ORX)/lib/dynamic/liborx*.dylib ../../../bin" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Profile|Universal64">
+				<Option output="../../../bin/shatter-cppp" prefix_auto="0" extension_auto="0" />
+				<Option object_output="obj/Universal64/Profile" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-ffast-math" />
+					<Add option="-g" />
+					<Add option="-O2" />
+					<Add option="-arch x86_64 -arch arm64" />
+					<Add option="-fno-exceptions" />
+					<Add option="-fno-rtti" />
+					<Add option="-D__orxPROFILER__" />
+					<Add option="-gdwarf-2" />
+					<Add option="-Wno-unused-function" />
+					<Add option="-Wno-write-strings" />
+					<Add directory="$(ORX)/include" />
+					<Add directory="../../../include/extensions" />
+					<Add directory="../../../include" />
+				</Compiler>
+				<Linker>
+					<Add option="-arch x86_64 -arch arm64" />
+					<Add option="-dead_strip" />
+					<Add option="-framework Foundation" />
+					<Add option="-framework AppKit" />
+					<Add directory="$(ORX)/lib/dynamic" />
+					<Add directory="." />
+					<Add library="orxp" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="cp -f $(ORX)/lib/dynamic/liborx*.dylib ../../../bin" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release|Universal64">
+				<Option output="../../../bin/shatter-cpp" prefix_auto="0" extension_auto="0" />
+				<Option object_output="obj/Universal64/Release" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-ffast-math" />
+					<Add option="-g" />
+					<Add option="-O2" />
+					<Add option="-arch x86_64 -arch arm64" />
+					<Add option="-fno-exceptions" />
+					<Add option="-fno-rtti" />
+					<Add option="-gdwarf-2" />
+					<Add option="-Wno-unused-function" />
+					<Add option="-Wno-write-strings" />
+					<Add directory="$(ORX)/include" />
+					<Add directory="../../../include/extensions" />
+					<Add directory="../../../include" />
+				</Compiler>
+				<Linker>
+					<Add option="-arch x86_64 -arch arm64" />
+					<Add option="-dead_strip" />
+					<Add option="-framework Foundation" />
+					<Add option="-framework AppKit" />
+					<Add directory="$(ORX)/lib/dynamic" />
+					<Add directory="." />
+					<Add library="orx" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="cp -f $(ORX)/lib/dynamic/liborx*.dylib ../../../bin" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Bundle|Universal64">
+				<Option output="../../../bin/shatter-cpp" prefix_auto="0" extension_auto="0" />
+				<Option object_output="obj/Universal64/Bundle" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-ffast-math" />
+					<Add option="-g" />
+					<Add option="-O2" />
+					<Add option="-arch x86_64 -arch arm64" />
+					<Add option="-fno-exceptions" />
+					<Add option="-fno-rtti" />
+					<Add option="-gdwarf-2" />
+					<Add option="-Wno-unused-function" />
+					<Add option="-Wno-write-strings" />
+					<Add directory="$(ORX)/include" />
+					<Add directory="../../../include/extensions" />
+					<Add directory="../../../include" />
+				</Compiler>
+				<Linker>
+					<Add option="-arch x86_64 -arch arm64" />
+					<Add option="-dead_strip" />
+					<Add option="-framework Foundation" />
+					<Add option="-framework AppKit" />
+					<Add directory="$(ORX)/lib/dynamic" />
+					<Add directory="." />
+					<Add library="orx" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="cp -f $(ORX)/lib/dynamic/liborx*.dylib ../../../bin" />
+				</ExtraCommands>
+			</Target>
 			<Target title="Debug|x64">
 				<Option output="../../../bin/shatter-cppd" prefix_auto="0" extension_auto="0" />
 				<Option object_output="obj/x64/Debug" />
@@ -17,18 +145,16 @@
 					<Add option="-m64" />
 					<Add option="-fno-exceptions" />
 					<Add option="-D__orxDEBUG__" />
-					<Add option="-stdlib=libc++" />
 					<Add option="-gdwarf-2" />
 					<Add option="-Wno-unused-function" />
 					<Add option="-Wno-write-strings" />
 					<Add directory="$(ORX)/include" />
-					<Add directory="../../../include/Scroll" />
+					<Add directory="../../../include/extensions" />
 					<Add directory="../../../include" />
 				</Compiler>
 				<Linker>
 					<Add option="-m64" />
 					<Add option="-L/usr/lib64" />
-					<Add option="-stdlib=libc++" />
 					<Add option="-dead_strip" />
 					<Add option="-framework Foundation" />
 					<Add option="-framework AppKit" />
@@ -53,18 +179,16 @@
 					<Add option="-fno-exceptions" />
 					<Add option="-fno-rtti" />
 					<Add option="-D__orxPROFILER__" />
-					<Add option="-stdlib=libc++" />
 					<Add option="-gdwarf-2" />
 					<Add option="-Wno-unused-function" />
 					<Add option="-Wno-write-strings" />
 					<Add directory="$(ORX)/include" />
-					<Add directory="../../../include/Scroll" />
+					<Add directory="../../../include/extensions" />
 					<Add directory="../../../include" />
 				</Compiler>
 				<Linker>
 					<Add option="-m64" />
 					<Add option="-L/usr/lib64" />
-					<Add option="-stdlib=libc++" />
 					<Add option="-dead_strip" />
 					<Add option="-framework Foundation" />
 					<Add option="-framework AppKit" />
@@ -88,18 +212,49 @@
 					<Add option="-m64" />
 					<Add option="-fno-exceptions" />
 					<Add option="-fno-rtti" />
-					<Add option="-stdlib=libc++" />
 					<Add option="-gdwarf-2" />
 					<Add option="-Wno-unused-function" />
 					<Add option="-Wno-write-strings" />
 					<Add directory="$(ORX)/include" />
-					<Add directory="../../../include/Scroll" />
+					<Add directory="../../../include/extensions" />
 					<Add directory="../../../include" />
 				</Compiler>
 				<Linker>
 					<Add option="-m64" />
 					<Add option="-L/usr/lib64" />
-					<Add option="-stdlib=libc++" />
+					<Add option="-dead_strip" />
+					<Add option="-framework Foundation" />
+					<Add option="-framework AppKit" />
+					<Add directory="$(ORX)/lib/dynamic" />
+					<Add directory="." />
+					<Add library="orx" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="cp -f $(ORX)/lib/dynamic/liborx*.dylib ../../../bin" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Bundle|x64">
+				<Option output="../../../bin/shatter-cpp" prefix_auto="0" extension_auto="0" />
+				<Option object_output="obj/x64/Bundle" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-ffast-math" />
+					<Add option="-g" />
+					<Add option="-O2" />
+					<Add option="-m64" />
+					<Add option="-fno-exceptions" />
+					<Add option="-fno-rtti" />
+					<Add option="-gdwarf-2" />
+					<Add option="-Wno-unused-function" />
+					<Add option="-Wno-write-strings" />
+					<Add directory="$(ORX)/include" />
+					<Add directory="../../../include/extensions" />
+					<Add directory="../../../include" />
+				</Compiler>
+				<Linker>
+					<Add option="-m64" />
+					<Add option="-L/usr/lib64" />
 					<Add option="-dead_strip" />
 					<Add option="-framework Foundation" />
 					<Add option="-framework AppKit" />
@@ -112,43 +267,109 @@
 				</ExtraCommands>
 			</Target>
 		</Build>
+		<Unit filename="../../../src/utils.cpp">
+			<Option virtualFolder="src" />
+		</Unit>
+		<Unit filename="../../../src/Brick.cpp">
+			<Option virtualFolder="src" />
+		</Unit>
+		<Unit filename="../../../src/Scene.cpp">
+			<Option virtualFolder="src" />
+		</Unit>
+		<Unit filename="../../../src/Score.cpp">
+			<Option virtualFolder="src" />
+		</Unit>
 		<Unit filename="../../../src/Object.cpp">
 			<Option virtualFolder="src" />
 		</Unit>
 		<Unit filename="../../../src/shatter-cpp.cpp">
 			<Option virtualFolder="src" />
 		</Unit>
+		<Unit filename="../../../src/Paddle.cpp">
+			<Option virtualFolder="src" />
+		</Unit>
+		<Unit filename="../../../src/GameScene.cpp">
+			<Option virtualFolder="src" />
+		</Unit>
+		<Unit filename="../../../src/Ball.cpp">
+			<Option virtualFolder="src" />
+		</Unit>
+		<Unit filename="../../../include/GameScene.h">
+			<Option virtualFolder="include" />
+		</Unit>
+		<Unit filename="../../../include/utils.h">
+			<Option virtualFolder="include" />
+		</Unit>
 		<Unit filename="../../../include/shatter-cpp.h">
+			<Option virtualFolder="include" />
+		</Unit>
+		<Unit filename="../../../include/Score.h">
+			<Option virtualFolder="include" />
+		</Unit>
+		<Unit filename="../../../include/Ball.h">
 			<Option virtualFolder="include" />
 		</Unit>
 		<Unit filename="../../../include/Object.h">
 			<Option virtualFolder="include" />
 		</Unit>
-		<Unit filename="../../../include/Scroll/Scroll.h">
-			<Option virtualFolder="include/Scroll" />
+		<Unit filename="../../../include/Brick.h">
+			<Option virtualFolder="include" />
 		</Unit>
-		<Unit filename="../../../include/Scroll/ScrollObject.h">
-			<Option virtualFolder="include/Scroll" />
+		<Unit filename="../../../include/Paddle.h">
+			<Option virtualFolder="include" />
 		</Unit>
-		<Unit filename="../../../include/Scroll/ScrollEd.h">
-			<Option virtualFolder="include/Scroll" />
+		<Unit filename="../../../include/Scene.h">
+			<Option virtualFolder="include" />
 		</Unit>
-		<Unit filename="../../../include/Scroll/ScrollBase.h">
-			<Option virtualFolder="include/Scroll" />
+		<Unit filename="../../../include/extensions/orxExtensions.h">
+			<Option virtualFolder="include/extensions" />
 		</Unit>
-		<Unit filename="../../../include/Scroll/ScrollBase.inl">
-			<Option virtualFolder="inline" />
+		<Unit filename="../../../include/extensions/orxBundle.h">
+			<Option virtualFolder="include/extensions" />
 		</Unit>
-		<Unit filename="../../../include/Scroll/ScrollObject.inl">
-			<Option virtualFolder="inline" />
+		<Unit filename="../../../include/extensions/Scroll/Scroll.h">
+			<Option virtualFolder="include/extensions/Scroll" />
 		</Unit>
-		<Unit filename="../../../include/Scroll/Scroll.inl">
-			<Option virtualFolder="inline" />
+		<Unit filename="../../../include/extensions/Scroll/ScrollObject.h">
+			<Option virtualFolder="include/extensions/Scroll" />
 		</Unit>
-		<Unit filename="../../../include/Scroll/ScrollEd.inl">
-			<Option virtualFolder="inline" />
+		<Unit filename="../../../include/extensions/Scroll/ScrollBase.h">
+			<Option virtualFolder="include/extensions/Scroll" />
+		</Unit>
+		<Unit filename="../../../include/extensions/lz4/lz4.h">
+			<Option virtualFolder="include/extensions/lz4" />
+		</Unit>
+		<Unit filename="../../../include/extensions/lz4/lz4hc.h">
+			<Option virtualFolder="include/extensions/lz4" />
+		</Unit>
+		<Unit filename="../../../include/orxBundleData.inc">
+			<Option virtualFolder="bundle" />
+		</Unit>
+		<Unit filename="../../premake4.lua">
+			<Option virtualFolder="build" />
+		</Unit>
+		<Unit filename="../../../data/config/basic.ini">
+			<Option virtualFolder="config" />
 		</Unit>
 		<Unit filename="../../../data/config/CreationTemplate.ini">
+			<Option virtualFolder="config" />
+		</Unit>
+		<Unit filename="../../../data/config/brick.ini">
+			<Option virtualFolder="config" />
+		</Unit>
+		<Unit filename="../../../data/config/view.ini">
+			<Option virtualFolder="config" />
+		</Unit>
+		<Unit filename="../../../data/config/gameover.ini">
+			<Option virtualFolder="config" />
+		</Unit>
+		<Unit filename="../../../data/config/arena.ini">
+			<Option virtualFolder="config" />
+		</Unit>
+		<Unit filename="../../../data/config/ExtensionTemplate.ini">
+			<Option virtualFolder="config" />
+		</Unit>
+		<Unit filename="../../../data/config/smoke.ini">
 			<Option virtualFolder="config" />
 		</Unit>
 		<Unit filename="../../../data/config/shatter-cpp.ini">
@@ -160,7 +381,25 @@
 		<Unit filename="../../../data/config/shatter-cppd.ini">
 			<Option virtualFolder="config" />
 		</Unit>
+		<Unit filename="../../../data/config/score.ini">
+			<Option virtualFolder="config" />
+		</Unit>
+		<Unit filename="../../../data/config/scenes.ini">
+			<Option virtualFolder="config" />
+		</Unit>
+		<Unit filename="../../../data/config/paddle.ini">
+			<Option virtualFolder="config" />
+		</Unit>
 		<Unit filename="../../../data/config/SettingsTemplate.ini">
+			<Option virtualFolder="config" />
+		</Unit>
+		<Unit filename="../../../data/config/title.ini">
+			<Option virtualFolder="config" />
+		</Unit>
+		<Unit filename="../../../data/config/ball.ini">
+			<Option virtualFolder="config" />
+		</Unit>
+		<Unit filename="../../../data/config/sparks.ini">
 			<Option virtualFolder="config" />
 		</Unit>
 		<Extensions>

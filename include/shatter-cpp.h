@@ -7,26 +7,23 @@
 #define __shatter_cpp_H__
 
 #define __NO_SCROLLED__
-#include "Scroll.h"
+#include "Scroll/Scroll.h"
 
 /** Game Class
  */
 class shatter_cpp : public Scroll<shatter_cpp>
 {
 public:
-
-
 private:
+    orxSTATUS Bootstrap() const;
 
-                orxSTATUS       Bootstrap() const;
+    void Update(const orxCLOCK_INFO &_rstInfo);
+    void CameraUpdate(const orxCLOCK_INFO &_rstClockInfo);
 
-                void            Update(const orxCLOCK_INFO &_rstInfo);
-
-                orxSTATUS       Init();
-                orxSTATUS       Run();
-                void            Exit();
-                void            BindObjects();
-
+    orxSTATUS Init();
+    orxSTATUS Run();
+    void Exit();
+    void BindObjects();
 
 private:
 };

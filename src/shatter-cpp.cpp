@@ -1,11 +1,13 @@
 /**
  * @file shatter-cpp.cpp
- * @date 2-Jul-2022
+ * @date 17-Jul-2026
  */
 
 #define __SCROLL_IMPL__
 #include "shatter-cpp.h"
 #undef __SCROLL_IMPL__
+
+#include "orxExtensions.h"
 
 #include "Ball.h"
 #include "Brick.h"
@@ -24,14 +26,62 @@ __declspec(dllexport) int AmdPowerXpressRequestHighPerformance = 1;
 
 /** Update function, it has been registered to be called every tick of the core clock
  */
-void shatter_cpp::Update(const orxCLOCK_INFO &_rstInfo)
+void shatter_cpp::Update(const orxCLOCK_INFO &_rstClockInfo)
 {
+    // Should quit?
+    if (orxInput_HasBeenActivated("Quit"))
+    {
+        // Send close event
+        orxEvent_SendShort(orxEVENT_TYPE_SYSTEM, orxSYSTEM_EVENT_CLOSE);
+    }
+}
+
+/** Camera Update function, it has been registered to be called every tick of the core clock, after physics & objects have been updated
+ */
+void shatter_cpp::CameraUpdate(const orxCLOCK_INFO &_rstClockInfo)
+{
+    // Get MainCamera proxy object
+    ScrollObject *poMainCamera = shatter_cpp::GetInstance().GetObject("MainCamera");
+    if (poMainCamera)
+    {
+        // Update & move the camera here
+        // [...]
+
+        // Round its position
+        orxVECTOR vPosition;
+        poMainCamera->SetPosition(*orxVector_Round(&vPosition, &poMainCamera->GetPosition(vPosition)));
+    }
+}
+
+/** BindObjects function, ScrollObject-derived classes are bound to config sections here
+ */
+void shatter_cpp::BindObjects()
+{
+    // Bind the classes to object config sections
+    ScrollBindObject<Ball>("Ball");
+    ScrollBindObject<Brick>("Brick");
+    ScrollBindObject<GameScene>("GameScene");
+    ScrollBindObject<Paddle>("Paddle");
+    ScrollBindObject<Scene>("Scene");
+    ScrollBindObject<Score>("Score");
 }
 
 /** Init function, it is called when all orx's modules have been initialized
  */
 orxSTATUS shatter_cpp::Init()
 {
+    // Init extensions
+    InitExtensions();
+
+    // Push [Main] as the default config section
+    orxConfig_PushSection("Main");
+
+    // Create the viewports
+    for (orxS32 i = 0, iCount = orxConfig_GetListCount("ViewportList"); i < iCount; i++)
+    {
+        orxViewport_CreateFromConfig(orxConfig_GetListString("ViewportList", i));
+    }
+
     // Create the scene
     CreateObject("TitleScene");
 
@@ -51,28 +101,18 @@ orxSTATUS shatter_cpp::Run()
  */
 void shatter_cpp::Exit()
 {
-    // Let orx clean all our mess automatically. :)
-}
+    // Exit from extensions
+    ExitExtensions();
 
-/** BindObjects function, ScrollObject-derived classes are bound to config sections here
- */
-void shatter_cpp::BindObjects()
-{
-    // Bind the classes to object config sections
-    ScrollBindObject<Ball>("Ball");
-    ScrollBindObject<Brick>("Brick");
-    ScrollBindObject<GameScene>("GameScene");
-    ScrollBindObject<Paddle>("Paddle");
-    ScrollBindObject<Scene>("Scene");
-    ScrollBindObject<Score>("Score");
+    // Let orx clean all our mess automatically. :)
 }
 
 /** Bootstrap function, it is called before config is initialized, allowing for early resource storage definitions
  */
 orxSTATUS shatter_cpp::Bootstrap() const
 {
-    // Add config storage to find the initial config file
-    orxResource_AddStorage(orxCONFIG_KZ_RESOURCE_GROUP, "../data/config", orxFALSE);
+    // Bootstrap extensions
+    BootstrapExtensions();
 
     // Return orxSTATUS_FAILURE to prevent orx from loading the default config file
     return orxSTATUS_SUCCESS;
